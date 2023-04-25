@@ -71,6 +71,7 @@ const createUser = async(req,res = response) => {
 }
 
 const loginUser = async(req,res)=>{
+    //console.log('Entro al backend al login user')
     const {email,password} = req.body;
 
     try {
@@ -129,7 +130,6 @@ const revalidateToken = (req,res) => {
 
     res.json({
         ok:true,
-        msg:'revalidate',
         uid,
         name,
         token, 
