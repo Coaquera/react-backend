@@ -12,7 +12,7 @@ const getEvento = async(req,res=response) => {
     const eventos = await Evento.find()
                                 .populate('user');
 
-    return res.status(400).json({
+    return res.json({
         ok:true,
         eventos,
     });
@@ -33,7 +33,7 @@ const crearEvento = async(req,res=response) => {
 
         const eventoGuardado = await evento.save();
         
-        res.status(400).json({
+        res.json({
             ok:true,
             evento:eventoGuardado,
         });

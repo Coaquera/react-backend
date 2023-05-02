@@ -30,6 +30,10 @@ app.use(express.json());
 //lo va habilitar en la ruta './api/auth'
 app.use('/api/auth',require('./routes/auth'));
 app.use('/api/events',require('./routes/events'));
+
+app.get('*',(req,res) => {
+    res.sendFile(__dirname + '/public/index.html');
+})
 //TODO:CRUD: Eventos
 
 
